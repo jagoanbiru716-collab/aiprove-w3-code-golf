@@ -1,0 +1,21 @@
+== node version
+v24.22.1
+
+== solution.js size
+462 solution.js
+
+== public + edge tests (test.js)
+solution.js (462 bytes): public 9/9, edge 48/48
+  INJECT "1+process.exit(9)" -> throws Number OK
+  INJECT "require(\"fs\").writeFileSync(\"/tmp/pwned\",\"x\")" -> throws TypeError OK
+  INJECT "10%3" -> throws Number OK
+  INJECT "1+2)" -> throws Number OK
+  INJECT "((1" -> throws Number OK
+  INJECT "abc" -> throws TypeError OK
+  INJECT "1..2" -> throws Number OK
+  INJECT "" -> throws TypeError OK
+  deep-500-nesting: 501 (want 501)
+  child-process alive after probes: yes
+
+== fuzz vs native eval (fuzz.js)
+fuzz done: 20000 generated, 18506 compared vs native eval, 0 mismatches
